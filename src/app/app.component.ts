@@ -31,6 +31,11 @@ export class AppComponent implements OnInit {
       title: 'Preguntas frecuentes',
       url: '/preguntasfrecuentes',
       icon: 'help-circle'
+    },
+    {
+      title: 'Mitos',
+      url: '/mitosyrealidades',
+      icon: 'alert-circle'
     }
   ];
 
