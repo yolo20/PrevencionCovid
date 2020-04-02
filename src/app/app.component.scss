@@ -57,7 +57,7 @@ ion-menu.md ion-item.selected ion-icon {
   color: var(--ion-color-primary);
 }
 
-ion-menu.md ion-item ion-icon {
+ion-menu.md ion-item {
   color: #616e7e;
 }
 
@@ -116,4 +116,41 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+ion-icon.Tw{  
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: white ;
+  background: #1da1f2 ;
+  font-size: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+
+}
+ion-icon.Fc{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: #fff;
+  background: #3b5998 ;
+  font-size: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+ion-icon.In{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
 }
