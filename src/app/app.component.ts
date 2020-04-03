@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
       icon: 'help-circle'
     },
     {
-      title: 'Mitos',
+      title: 'Mitos y realidades',
       url: '/mitosyrealidades',
       icon: 'alert-circle'
     }

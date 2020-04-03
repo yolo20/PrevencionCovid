@@ -15,4 +15,7 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
+    //document.getElementById("img1").onerror("");
+    //document.getElementById("img1").setAttribute("src","assets/img/020420_post_coronavirus_baja.jpg"); 
+
 }
