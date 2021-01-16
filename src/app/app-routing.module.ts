@@ -4,20 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
   {
     path: 'preguntasfrecuentes',
     loadChildren: () => import('./preguntasfrecuentes/preguntasfrecuentes.module').then( m => m.PreguntasfrecuentesPageModule)
-  },
-  {
-    path: 'autoevaluacion',
-    loadChildren: () => import('./autoevaluacion/autoevaluacion.module').then( m => m.AutoevaluacionPageModule)
   },
   {
     path: 'lineasdeemergencia',
@@ -26,7 +18,11 @@ const routes: Routes = [
   {
     path: 'mitosyrealidades',
     loadChildren: () => import('./mitosyrealidades/mitosyrealidades.module').then( m => m.MitosyrealidadesPageModule)
-  }
+  },
+  {
+    path: 'home', 
+    loadChildren: () => import('./public/home/home.module').then( m => m.HomePageModule)
+  } 
 ];
 
 @NgModule({

@@ -1,17 +1,22 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
+  <ion-split-pane contentId="main-content" when="(min-width: 1922px)">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-item-divider><ion-list-header>Bienvenido</ion-list-header></ion-item-divider>
+          <ion-item-divider>
+            <ion-list-header>Bienvenido</ion-list-header>
+          </ion-item-divider>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none"
+              detail="false" [class.selected]="selectedIndex == i">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-item-divider><ion-label>{{ p.title }}</ion-label></ion-item-divider>
+              <ion-item-divider>
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item-divider>
             </ion-item>
           </ion-menu-toggle>
-          
+
           <ion-item>
             <a href="https://www.instagram.com/infopresidencia/">
               <ion-icon name="logo-facebook" class="Fc"></ion-icon>
@@ -22,7 +27,7 @@
             <a href="https://twitter.com/infopresidencia">
               <ion-icon name="logo-twitter" class="Tw"></ion-icon>
             </a>
-           </ion-item>
+          </ion-item>
         </ion-list>
 
       </ion-content>
