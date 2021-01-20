@@ -19,18 +19,13 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Lineas de emergencia',
-      url: '/lineasdeemergencia',
+      url: '/lineas-emergencia',
       icon: 'heart'
     },
     {
       title: 'Preguntas frecuentes',
-      url: '/preguntasfrecuentes',
+      url: '/preguntas',
       icon: 'help-circle'
-    },
-    {
-      title: 'Mitos y realidades',
-      url: '/mitosyrealidades',
-      icon: 'alert-circle'
     }
   ];
 

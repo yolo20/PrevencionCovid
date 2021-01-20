@@ -1,4 +1,8 @@
 export interface PruevasCovid {
+    0: Array<Object>;
+}
+
+export interface Object {
     acumuladas: number,
     amazonas: number,
     antioquia: number,

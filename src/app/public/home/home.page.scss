@@ -1,0 +1,277 @@
+/*======================================================= Menu ==========================================================*/
+input{
+  opacity: 0; 
+}
+#toggle{
+  pointer-events: none;
+  border-radius: 50%;
+  background: rgb(167, 255, 2);
+  transition: 0.5s;
+  font-size: 36px;
+  box-shadow: 0 0 0 0px #9c27b0;
+  display: table;
+}
+#toggle ion-icon{
+  display: table-cell;
+  vertical-align: middle;
+}
+input, 
+#details {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#details {
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 11;
+  pointer-events: none;
+  transition: 0.5s;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+
+  ion-title {
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+  }
+}
+input, 
+#toggle {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  left: 10px;
+  outline: none;
+  z-index: 10;
+}
+#ContentLineas{
+  display: none;
+}
+#ContentPreguntas{
+  display: none;
+}
+/*================================================= Display Input Lineas ======================================================*/
+
+ /* Ocultar botón radio */
+input[id^="spoiler"]{
+  display: none;
+}
+  /* Estilo botón clicable */
+input[id^="spoiler"] + label {
+  display: block;
+  margin: 0 auto;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+  /* Estilo botón cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label {
+  color: #333;
+  background: #ccc;
+}
+  /* Estilo caja SPOILER (inicialmente oculto) */
+input[id^="spoiler"] ~ .spoiler {
+  width: 90%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 10px auto 0;
+}
+  /* Estilo caja SPOILER cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label + .spoiler{
+  height: auto;
+  opacity: 1;
+}
+
+/*Redes sociales*/
+ion-fab{
+  position: fixed;
+  margin: 10px 20px 10px 10px;
+}
+
+/*======================================================= Home ==========================================================*/
+#ContentHome{
+
+  .CovidPanorama{
+    width: 100%;
+    max-width: 1200px;
+    height: 440px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+  
+    ion-grid{
+      margin: 20px 0 20px 0 ;
+    }
+    ion-row ion-col{
+      height: 100%;
+    }
+    ion-icon {
+      font-size: 60px;
+      color: var(--ion-color-primary);
+    }
+    h3{
+      text-align: center;
+    }
+    .icon-box {
+      border-radius: 10px;
+      box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      margin: 20px;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .icon-box:hover{
+      transform: translateY(-15px);
+      box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .InfomacionCovid{
+    margin: 20px 20px 20px 20px;
+
+    ion-col{
+      padding: 20px;
+
+    }
+    img{
+      width: 600px;
+      height: 300px;
+    }
+  }
+
+  .Aislamiento{
+
+    a{
+      text-decoration: none;
+    }
+    ion-card{
+
+      img{
+        margin: 0;
+        height: 300px;
+      }
+      ion-title{
+        font-size: 30px;
+      }
+      h2{
+        color: black;
+      }
+    }
+  }
+
+  .coronapp{
+    ion-col{
+      display: grid;
+      align-content: center;
+    }
+    p{
+      text-align: center;
+    }
+    #Logcoronapp{
+      width: 50px;
+      height: 50px;
+    }
+    #store{
+      height: 100px;
+      width: 250px;
+    }
+    ul{
+      font-size: 16px;
+    }
+    #imgcelular{
+      height: 400px;
+    }
+  }
+}
+
+/*======================================================= Lineas de emergencia ==========================================================*/
+
+#ContentLineas{
+  
+  .CuarentenaEsVida{
+
+    h2 {
+      font-size: 40px;
+      color: var(--ion-color-primary);
+      font-weight: bold;
+      text-align: center;
+      margin-top: 5%;
+    }
+    
+    .icon-box {
+      padding: 30px;
+      // height: 100%;
+      margin-top: 10%;
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.3);
+      transition: all 0.3s ease-in-out;
+      border-radius: 8px;
+      z-index: 1;
+    }
+    
+    .icon-box::before {
+      content: '';
+      position: absolute;
+      background: white;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      top: 100%;
+      transition: all 0.3s;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+    
+    .icon-box:hover::before {
+      background: #a9b7ef;
+      top: 0;
+      border-radius: 0px;
+    }
+    
+    .title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-align: center;
+      color: var(--ion-color-primary);
+    }
+    
+    .title a {
+      //color: #7eac39;
+      color: var(--ion-color-primary);
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    .description {
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 0;
+      text-align: center;
+      color: grey;
+    }
+
+    .icon-box:hover .title a,
+    .icon-box:hover .description,
+    .icon-box:hover .icon ion-icon {
+      color: red;
+    }
+  } 
+  
+  .spoiler{
+    margin: 10px 10px 10px 10px;
+  }
+}

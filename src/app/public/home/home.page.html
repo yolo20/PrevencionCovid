@@ -1,53 +1,127 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <!-- Menu -->
+  <input id="checkbox" type="checkbox" (click)="menuChangeEvento()">
+  <div id="toggle">
+    <ion-icon name="menu-outline"></ion-icon>
+  </div>
+  <div id="details">
+    <div>
+      <ion-title (click)="menuEvento('home')">Inicio</ion-title>
+      <ion-title (click)="menuEvento('lineas')">Lineas de emergencia</ion-title>
+    </div>
+  </div>
+  <!-- Redes sociales -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share-social-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <a
+        href="https://api.whatsapp.com/send?phone=573153330000&text=Datos%20adicionales%20del%20Covid-19%20en%20Colombia,%20dando%20clic%20en%20enviar%20&source=&data=&autoload=false">
+        <ion-fab-button>
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-fab-button>
+      </a>
+      <a href="https://www.facebook.com/MinSaludCol">
+        <ion-fab-button>
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-fab-button>
+      </a>
+      <a href="https://twitter.com/MinSaludCol">
+        <ion-fab-button>
+          <ion-icon name="logo-twitter"></ion-icon>
+        </ion-fab-button>
+      </a>
+      <a href="https://www.youtube.com/user/MinSaludColPrensa">
+        <ion-fab-button>
+          <ion-icon name="logo-youtube"></ion-icon>
+        </ion-fab-button>
+      </a>
+      <a href="https://www.instagram.com/minsaludcol/">
+        <ion-fab-button>
+          <ion-icon name="logo-instagram"></ion-icon>
+        </ion-fab-button>
+      </a>
+    </ion-fab-list>
+  </ion-fab>
 
-  <div class="Content">
-
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon name="share-social-outline"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-list side="top">
-        <a href="https://api.whatsapp.com/send?phone=573153330000&text=Datos%20adicionales%20del%20Covid-19%20en%20Colombia,%20dando%20clic%20en%20enviar%20&source=&data=&autoload=false">
-          <ion-fab-button>
-            <ion-icon name="logo-whatsapp"></ion-icon>
-          </ion-fab-button>
-        </a>
-        <a href="https://www.facebook.com/MinSaludCol">
-          <ion-fab-button>
-            <ion-icon name="logo-facebook"></ion-icon>
-          </ion-fab-button>
-        </a>
-        <a href="https://twitter.com/MinSaludCol">
-          <ion-fab-button>
-            <ion-icon name="logo-twitter"></ion-icon>
-          </ion-fab-button>
-        </a>
-        <a href="https://www.youtube.com/user/MinSaludColPrensa">
-          <ion-fab-button>
-            <ion-icon name="logo-youtube"></ion-icon>
-          </ion-fab-button>
-        </a>
-        <a href="https://www.instagram.com/minsaludcol/">
-          <ion-fab-button>
-            <ion-icon name="logo-instagram"></ion-icon>
-          </ion-fab-button>
-        </a>
-      </ion-fab-list>
-    </ion-fab>
-
+  <div id="ContentHome">
+    <div class="CovidPanorama">
+      <ion-grid>
+        <ion-title>Panorama General en Colombia</ion-title>
+        <ion-row>
+          <ion-col size-md="3" size-lg="3" size-sm="6" size-xs="12" size-xl="3">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon">
+                <ion-icon name="body-outline"></ion-icon>
+              </div>
+              <h3 class="title">Casos confirmados</h3>
+              <h4 class="description">{{CONFIRMADOS_COL}}</h4>
+            </div>
+          </ion-col>
+          <ion-col s size-md="3" size-lg="3" size-sm="6" size-xs="12" size-xl="3">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon">
+                <ion-icon name="sad-outline"></ion-icon>
+              </div>
+              <h3 class="title">Casos activos</h3>
+              <h4 class="description">{{ACTIVOS_COL}}</h4>
+            </div>
+          </ion-col>
+          <ion-col size-md="3" size-lg="3" size-sm="6" size-xs="12" size-xl="3">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon">
+                <ion-icon name="happy-outline"></ion-icon>
+              </div>
+              <h3 class="title">Recuperados</h3>
+              <h4 class="description">{{RECUPERADOS_COL}}</h4>
+            </div>
+          </ion-col>
+          <ion-col s size-md="3" size-lg="3" size-sm="6" size-xs="12" size-xl="3">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon">
+                <ion-icon name="skull-outline"></ion-icon>
+              </div>
+              <h3 class="title">Fallecidos</h3>
+              <h4 class="description">{{MUERTES_COL}}</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-md="4" size-lg="4" size-sm="4" size-xs="12" size-xl="4">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon">
+                <ion-icon name="flask-outline"></ion-icon>
+              </div>
+              <h3 class="title">Pruebas PCR procesadas</h3>
+              <h4 class="description">{{acumuladas}}</h4>
+            </div>
+          </ion-col>
+          <ion-col size-md="4" size-lg="4" size-sm="4" size-xs="12" size-xl="4">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon">
+                <ion-icon name="add-circle-outline"></ion-icon>
+              </div>
+              <h3 class="title">Pruebas positivas</h3>
+              <h4 class="description">{{positivas_acumuladas}}</h4>
+            </div>
+          </ion-col>
+          <ion-col size-md="4" size-lg="4" size-sm="4" size-xs="12" size-xl="4">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon">
+                <ion-icon name="remove-circle-outline"></ion-icon>
+              </div>
+              <h3 class="title">Pruebas negativas</h3>
+              <h4 class="description">{{negativas_acumuladas}}</h4>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
     <div class="InfomacionCovid">
       <ion-grid>
         <ion-row>
           <ion-col>
-            <!-- Segment with default selection -->
             <ion-segment scrollable [(ngModel)]="selectTabs">
               <ion-segment-button value="Covid">
                 <ion-label>Covid-19</ion-label>
@@ -69,29 +143,28 @@
             <div *ngIf="selectTabs == 'Covid'">
               <img alt="Covid-19" src="assets/img/InformacionCOVID/coronavirus.jpg">
             </div>
-
             <div *ngIf="selectTabs == 'Trasmision'">
               <img alt="Trasmision" src="assets/img/InformacionCOVID/Trasmision.jpg">
             </div>
-
             <div *ngIf="selectTabs == 'Sintomas'">
               <img alt="Sintomas" src="assets/img/InformacionCOVID/sintomas.png">
             </div>
-
             <div *ngIf="selectTabs == 'Prevencion'">
               <img alt="Prevencion" src="assets/img/InformacionCOVID/prevencion.jpg">
             </div>
-
           </ion-col>
           <ion-col>
             <div *ngIf="selectTabs == 'Covid'">
               <ion-title>¿Qué es el COVID-19?</ion-title>
               <p>
                 Los coronavirus (CoV) son virus que surgen periódicamente en diferentes áreas del mundo y que causan
-                Infección Respiratoria Aguda (IRA), es decir gripa, que pueden llegar a ser leve, moderada o grave.<br>
+                Infección Respiratoria Aguda (IRA), es decir gripa, que pueden llegar a ser leve, moderada o
+                grave.
+              </p>
+              <p>
                 El nuevo Coronavirus (COVID-19) ha sido catalogado por la Organización Mundial de la Salud como una
-                emergencia en salud pública de importancia internacional (ESPII). Se han identificado casos en todos los
-                continentes y, el 6 de marzo se confirmó el primer caso en Colombia.
+                emergencia en salud pública de importancia internacional (ESPII). Se han identificado casos en todos
+                los continentes y, el 6 de marzo se confirmó el primer caso en Colombia.
               </p>
             </div>
 
@@ -154,7 +227,7 @@
       </ion-grid>
     </div>
 
-    <div class="Asislamiento">
+    <div class="Aislamiento">
       <ion-grid>
         <ion-row>
           <ion-col>
@@ -163,44 +236,93 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-slides>
+            <ion-slides [options]="slideOpts">
+              <ion-slide></ion-slide>
               <ion-slide>
-                <ion-title>ADULTO MAYOR</ion-title>
-                <P>
-                  Si eres un adulto mayor de 70, o tienes familiares que lo sean, es importante que sigas las
-                  recomendaciones que han hecho los expertos para llevar un Aislamiento Preventivo saludable.
-                </P>
+                <a href="https://coronaviruscolombia.gov.co/Covid19/aislamiento-saludable/adulto-mayor.html">
+                  <ion-card>
+                    <ion-card-header>
+                      <img alt="Adulto Mayor" src="assets/img/Aislamiento/abuelitos.jpg">
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-title>ADULTO MAYOR</ion-title>
+                      <h2 class="description">
+                        Si eres un adulto mayor de 70, o tienes familiares que lo sean, es importante que sigas las
+                        recomendaciones que han hecho los expertos para llevar un Aislamiento Preventivo saludable.
+                      </h2>
+                    </ion-card-content>
+                  </ion-card>
+                </a>
               </ion-slide>
               <ion-slide>
-                <ion-title>SALUD MENTAL</ion-title>
-                <P>
-                  Estamos en casa para cuidar de nuestra salud física, pero también es importante cuidar de nuestra
-                  mente y nuestras emociones. Es normal que te sientas diferente en estos días, por eso tenemos
-                  herramientas para ayudarte llamaNDO desde tu teléfono fijo o celular, sin costo las 24 horas del día,
-                  a la línea 192 y seleccionar la opción 4.
-                </P>
+                <a href="https://coronaviruscolombia.gov.co/Covid19/aislamiento-saludable/salud-mental.html">
+                  <ion-card>
+                    <ion-card-header>
+                      <img alt="Adulto Mayor" src="assets/img/Aislamiento/SaludMental.jpg">
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-title>SALUD MENTAL</ion-title>
+                      <h2 class="description">
+                        Estamos en casa para cuidar de nuestra salud física, pero también es importante cuidar de
+                        nuestra
+                        mente y nuestras emociones.
+                      </h2>
+                    </ion-card-content>
+                  </ion-card>
+                </a>
               </ion-slide>
               <ion-slide>
-                <ion-title>ESTADO FÍSICO</ion-title>
-                <P>
-                  Tus mascotas no están en riesgo de contagio, pero es importante que cuides de ellas con precauciones
-                  adicionales durante el periodo de emergencia.
-                </P>
+                <a href="https://coronaviruscolombia.gov.co/Covid19/aislamiento-saludable/estado-fisico-deporte.html">
+                  <ion-card>
+                    <ion-card-header>
+                      <img alt="Adulto Mayor" src="assets/img/Aislamiento/ejercicio-casa.jpg">
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-title>ESTADO FÍSICO</ion-title>
+                      <h2 class="description">
+                        Tus mascotas no están en riesgo de contagio, pero es importante que cuides de ellas con
+                        precauciones
+                        adicionales durante el periodo de emergencia.
+                      </h2>
+                    </ion-card-content>
+                  </ion-card>
+                </a>
               </ion-slide>
               <ion-slide>
-                <ion-title>CUIDADO ANIMAL</ion-title>
-                <P>
-                  Estar en casa no significa que vamos a estar sentados todo el día. Mientras te cuidas del coronavirus,
-                  también cuida de tu cuerpo con ejercicios caseros.
-                </P>
+                <a href="https://coronaviruscolombia.gov.co/Covid19/aislamiento-saludable/cuidado-animal.html">
+                  <ion-card>
+                    <ion-card-header>
+                      <img alt="Adulto Mayor" src="assets/img/Aislamiento/cuidadoAnimal.jpg">
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-title>CUIDADO ANIMAL</ion-title>
+                      <h2 class="description">
+                        Estar en casa no significa que vamos a estar sentados todo el día. Mientras te cuidas del
+                        coronavirus,
+                        también cuida de tu cuerpo con ejercicios caseros.
+                      </h2>
+                    </ion-card-content>
+                  </ion-card>
+                </a>
               </ion-slide>
               <ion-slide>
-                <ion-title>HOGAR</ion-title>
-                <P>
-                  Seguramente ya estás al tanto de como cuidar tu hogar frente al COVID-19, sin embargo, nunca sobra
-                  repasar las normas para garantizar que tu hogar esté lo más seguro posible.
-                </P>
+                <a href="https://coronaviruscolombia.gov.co/Covid19/aislamiento-saludable/hogar.html">
+                  <ion-card>
+                    <ion-card-header>
+                      <img alt="Adulto Mayor" src="assets/img/Aislamiento/hogar.jpg">
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-title>HOGAR</ion-title>
+                      <h2 class="description">
+                        Seguramente ya estás al tanto de como cuidar tu hogar frente al COVID-19, sin embargo, nunca
+                        sobra
+                        repasar las normas para garantizar que tu hogar esté lo más seguro posible.
+                      </h2>
+                    </ion-card-content>
+                  </ion-card>
+                </a>
               </ion-slide>
+              <ion-slide></ion-slide>
             </ion-slides>
           </ion-col>
         </ion-row>
@@ -211,8 +333,10 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <img alt="logoCoronapp" src="assets/img/downloadCovidapp/LogoCoronApp.png">
-            <ion-title>Haz el autodiagnóstico del COVID-19 en CoronApp</ion-title>
+            <ion-title>
+              <img id="Logcoronapp" alt="logoCoronapp" src="assets/img/downloadCovidapp/LogoCoronApp.png">
+              Haz el autodiagnóstico del COVID-19 en CoronApp
+            </ion-title>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -223,47 +347,251 @@
             </p>
           </ion-col>
         </ion-row>
-        <ion-row>
+        <ion-row class="rowStore">
           <ion-col>
             <a href="https://play.google.com/store/apps/details?id=co.gov.ins.guardianes">
-              <img alt="logoCoronapp" src="assets/img/downloadCovidapp/playStore-button.png">
+              <img id="store" alt="logoCoronapp" src="assets/img/downloadCovidapp/playStore-button.png">
             </a>
           </ion-col>
           <ion-col>
             <a href="https://go.gov.co/iosCorona">
-              <img alt="logoCoronapp" src="assets/img/downloadCovidapp/appStore-button.png">
+              <img id="store" alt="logoCoronapp" src="assets/img/downloadCovidapp/appStore-button.png">
             </a>
           </ion-col>
           <ion-col>
-            <a
-              href="https://appgallery.cloud.huawei.com/marketshare/app/C102001289?locale=en_GB&source=appshare&subsource=C102001289">
-              <img alt="logoCoronapp" src="assets/img/downloadCovidapp/huaweiStore-button.png">
-            </a>
+            <div>
+              <a
+                href="https://appgallery.cloud.huawei.com/marketshare/app/C102001289?locale=en_GB&source=appshare&subsource=C102001289">
+                <img id="store" alt="logoCoronapp" src="assets/img/downloadCovidapp/huaweiStore-button.png">
+              </a>
+            </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-title>Características de esta aplicación:</ion-title>
-            <ul>
-              <li>Es una aplicación gratuita, que no consume datos.</li>
-              <li>Ayuda a detectar zonas afectadas y personas cercanas con diagnóstico positivo para COVID-19.</li>
-              <li>Facilita el monitoreo en tiempo real de datos recopilados al Centro de Operaciones de Emergencias del
-                Instituto Nacional de Salud (INS), para que puedan actuar rápidamente y dar apoyo en coordinación con
-                las autoridades locales, departamentales y nacionales.</li>
-              <li>Incorpora tecnologías y mecánicas de aplicaciones pioneras en el mundo para combatir el Coronavirus,
-                como las desarrolladas por los Gobiernos de Singapur y de Corea del Sur, así como compañía Apple. </li>
-            </ul>
+            <div>
+              <ion-title>Características de esta aplicación:</ion-title>
+              <ul>
+                <li>Es una aplicación gratuita, que no consume datos.</li>
+                <li>Ayuda a detectar zonas afectadas y personas cercanas con diagnóstico positivo para COVID-19.</li>
+                <li>Facilita el monitoreo en tiempo real de datos recopilados al Centro de Operaciones de Emergencias del
+                  Instituto Nacional de Salud (INS), para que puedan actuar rápidamente y dar apoyo en coordinación con
+                  las autoridades locales, departamentales y nacionales.</li>
+                <li>Incorpora tecnologías y mecánicas de aplicaciones pioneras en el mundo para combatir el Coronavirus,
+                  como las desarrolladas por los Gobiernos de Singapur y de Corea del Sur, así como compañía Apple. </li>
+              </ul>
+            </div>
           </ion-col>
           <ion-col>
-            <img alt="logoCoronapp" src="assets/img/downloadCovidapp/coronapp-1.png">
+            <img id="imgcelular" alt="logoCoronapp" src="assets/img/downloadCovidapp/coronapp-1.png">
           </ion-col>
         </ion-row>
       </ion-grid>
     </div>
-
-
   </div>
 
+  <div id="ContentLineas">
+    <div class="NivelNacional">
+      <ion-grid>
+          <ion-title>
+            Líneas de atención a nivel nacional
+          </ion-title>
+          <ion-row>
+            <ion-col>
+              <input type="checkbox" id="spoiler32">
+              <label for="spoiler32">LINEA DE ATENCIÓN AL RESTO DEL PAÍS</label>
+              <div class="spoiler">01-8000-960020</div>
+              <input type="checkbox" id="spoiler33">
+              <label for="spoiler33">NUEVA EPS</label>
+              <div class="spoiler">Numero de contacto: 01-8000-954400 - 01-8000-952000</div>
+              <input type="checkbox" id="spoiler34">
+              <label for="spoiler34">COMFENALCO</label>
+              <div class="spoiler">Numero de contacto: 01-8000-180544 - Call Center: 6938000</div>
+              <input type="checkbox" id="spoiler35">
+              <label for="spoiler35">SURA</label>
+              <div class="spoiler">Numero de contacto: 01-8000-519519 OPC 0</div>
+            </ion-col>
+            <ion-col>
+              <input type="checkbox" id="spoiler46">
+              <label for="spoiler46">MEDIMÁS</label>
+              <div class="spoiler">Numero de contacto: 01-8000-120777</div>
+              <input type="checkbox" id="spoiler48">
+              <label for="spoiler48">FAMISANAR</label>
+              <div class="spoiler">Numero de contacto: 01-8000-916662</div>
+              <input type="checkbox" id="spoiler49">
+              <label for="spoiler49">POLICIA NACIONAL</label>
+              <div class="spoiler">Numero de contacto: 01-8000-911143</div>
+              <input type="checkbox" id="spoiler40">
+              <label for="spoiler40">FUERZAS MILITARES</label>
+              <div class="spoiler">Numero de contacto: 01-8000-919955 - 01-8000-111335</div>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="CuarentenaEsVida">
+      <ion-grid>
+          <ion-title>Cuarentena por la vida</ion-title>
+          <ion-row>
+            <ion-col size-md="4" size-lg="4" size-sm="4" size-xs="12" size-xl="4">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="title">Si la vida de una mujer, niña, niño, adolescente o persona está en peligro</h3>
+                <p class="description">Marque al 123 Emergencias o acuda al cuadrante de policía más cercano</p>
+              </div>
+            </ion-col>
+            <ion-col size-md="4" size-lg="4" size-sm="4" size-xs="12" size-xl="4">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="title">Si un niño, niña o adolescente, sufre de maltrato infantil</h3>
+                <p class="description">Marque al 141 línea de protección a niños, niñas y adolescentes. Esta línea es
+                  del
+                  Bienestar Familiar</p>
+              </div>
+            </ion-col>
+            <ion-col size-md="4" size-lg="4" size-sm="4" size-xs="12" size-xl="4">
+              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="title">Si una mujer es víctima de violencia en Colombia</h3>
+                <p class="description">Marque al 155 línea de orientación a mujeres víctimas de violencia</p>
+              </div>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="SaludMental">
+      <ion-grid>
+          <ion-title>
+            Líneas de atención en salud mental y
+            consumo de sustancias
+          </ion-title>
+          <ion-row>
+            <ion-col>
+              <input type="checkbox" id="spoiler2">
+              <label for="spoiler2">Atlántico</label>
+              <div class="spoiler">
+                CRUE: (5) 330 8100 - (5) 330 8101 - (5) 330 9000 Extensión: 5131<br>
+                24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler3">
+              <label for="spoiler3">Antioquia (Medellín)</label>
+              <div class="spoiler">
+                Línea amiga: (4) 444 4448<br>
+                Lunes a viernes 7:30 am a 7:30 pm. Sábados 7:30 am a 2:30 pm
+              </div>
+              <input type="checkbox" id="spoiler4">
+              <label for="spoiler4">Arauca</label>
+              <div class="spoiler">
+                Línea de Atencion a Urgencias y Emergencias en Salud: 125 <br>
+                24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler5">
+              <label for="spoiler5">Barranquilla</label>
+              <div class="spoiler">
+                Línea de la vida: (5) 339 9999 <br>
+                24 horas/7 días (Barranquilla y área metropolitana).
+              </div>
+              <input type="checkbox" id="spoiler6">
+              <label for="spoiler6">Bogotá D.C.</label>
+              <div class="spoiler">
+                Línea: 106<br>
+                Whatsapp: +57 300 754 9833<br>
+                24 horas/7 días.<br>
+                Línea psicoactiva "Activa tu mente, transforma tu vida": 01 8000 112 439 <br>
+                Lunes a sábado de 7:00 am. a 10:00 pm. jornada continua.
+              </div>
+              <input type="checkbox" id="spoiler8">
+              <label for="spoiler8">Bolívar</label>
+              <div class="spoiler">
+                Línea amiga: 106<br>
+                24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler9">
+              <label for="spoiler9">Caquetá</label>
+              <div class="spoiler">
+                Centro Regulador de Urgencias y Emergencias: <br>
+                Celular: +57 318 617 5909 Telefono: 435 6021 Extensión 51<br>
+                24 horas/7 días.<br>
+                Centro de escucha comunitario (Línea y Whatsapp): +57 321 467 8323<br>
+                Correo: C-escucha@hospítalsanrafael.gov.co<br>
+                Facebook: San Rafael Escucha Lunes a lunes 7:00 am. a 7:00 pm.<br>
+              </div>
+              <input type="checkbox" id="spoiler10">
+              <label for="spoiler10">Cartagena DT</label>
+              <div class="spoiler">
+                Línea: 125<br>
+                24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler11">
+              <label for="spoiler11">Cauca</label>
+              <div class="spoiler">
+                Línea CRUE: +57 321 812 8623 - +57 321 700 5636<br>
+                Telefonos: 820 5390 - 820 5366 <br>
+                24 horas/7 días.
+              </div>
+            </ion-col>
+            <ion-col>
+              <input type="checkbox" id="spoiler12">
+              <label for="spoiler12">Casanare</label>
+              <div class="spoiler">
+                Centro Regulador de Urgencias y Emergencias: +57 317 371 7451<br>
+                24 horas/7 días.<br>
+                Línea Amiga: +57 318 299 0629
+                (Municipio de Aguazul) 24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler13">
+              <label for="spoiler13">Risaralda</label>
+              <div class="spoiler">
+                Línea amiga "Ámate y Vive": 106 - (6)333 9610<br>
+                Lunes a viernes 8:00 am.-12:00 m. - 2:00 - 5:00 pm.<br>
+                Facebook: linea amiga Risaralda
+              </div>
+              <input type="checkbox" id="spoiler14">
+              <label for="spoiler14">Cesar </label>
+              <div class="spoiler">
+                Línea Vital: #123
+              </div>
+              <input type="checkbox" id="spoiler15">
+              <label for="spoiler15">Cundinamarca </label>
+              <div class="spoiler">
+                Línea de Cundinamarca: 123 <br>
+                Celular: +57 321 248 0377<br>
+                24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler16">
+              <label for="spoiler16">Guajira </label>
+              <div class="spoiler">
+                Línea Esperanza: 01 8000 943 782 <br>
+                24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler18">
+              <label for="spoiler18">Meta </label>
+              <div class="spoiler">
+                Línea Amiga: 312 575 1135<br>
+                Lunes a domingo de 9:00 a.m. a 9:00 p.m.
+              </div>
+              <input type="checkbox" id="spoiler19">
+              <label for="spoiler19">Putumayo </label>
+              <div class="spoiler">
+                CRUE: +57 312 319 1736<br>
+                24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler20">
+              <label for="spoiler20">Huila </label>
+              <div class="spoiler">
+                Centro de Escucha (Línea y Chat): +57 321 907 3439 - (8)870 2277<br>
+                centroescucha.salud@huila.gov.co 24 horas/7 días.
+              </div>
+              <input type="checkbox" id="spoiler21">
+              <label for="spoiler21">Sincelejo</label>
+              <div class="spoiler">
+                CRUE: (5)282 2556 <br>
+                WhatsApp: +57 315 698 4482<br>
+                Lunes a viernes: 8:00 a.m. a 10:00 p.m.<br>
+                Fines de semana: 9:00 a.m. a 5:00 p.m.
+              </div>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 
 </ion-content>
-l

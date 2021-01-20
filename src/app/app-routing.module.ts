@@ -8,21 +8,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'preguntasfrecuentes',
-    loadChildren: () => import('./preguntasfrecuentes/preguntasfrecuentes.module').then( m => m.PreguntasfrecuentesPageModule)
-  },
-  {
-    path: 'lineasdeemergencia',
-    loadChildren: () => import('./lineasdeemergencia/lineasdeemergencia.module').then( m => m.LineasdeemergenciaPageModule)
-  },
-  {
-    path: 'mitosyrealidades',
-    loadChildren: () => import('./mitosyrealidades/mitosyrealidades.module').then( m => m.MitosyrealidadesPageModule)
-  },
-  {
     path: 'home', 
     loadChildren: () => import('./public/home/home.module').then( m => m.HomePageModule)
-  } 
+  }
 ];
 
 @NgModule({
