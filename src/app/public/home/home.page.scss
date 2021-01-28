@@ -5,15 +5,16 @@ input{
 #toggle{
   pointer-events: none;
   border-radius: 50%;
-  background: rgb(167, 255, 2);
+  background: var(--ion-color-primary);
   transition: 0.5s;
   font-size: 36px;
-  box-shadow: 0 0 0 0px #9c27b0;
+  box-shadow: 0 0 0 0px var(--ion-color-primary);
   display: table;
 }
 #toggle ion-icon{
   display: table-cell;
   vertical-align: middle;
+  color: #fff;
 }
 input, 
 #details {
@@ -40,7 +41,7 @@ input,
     margin-bottom: 20px;
     text-align: center;
     cursor: pointer;
-    color: black;
+    color: #fff;
   }
 }
 input, 
@@ -185,6 +186,9 @@ ion-fab{
     #store{
       height: 100px;
       width: 250px;
+      margin: auto;
+      display: grid;
+      align-content: center;
     }
     ul{
       font-size: 16px;
@@ -268,6 +272,14 @@ ion-fab{
     .icon-box:hover .description,
     .icon-box:hover .icon ion-icon {
       color: red;
+    }
+
+    img{
+      width: 300px;
+      height: 200px;
+      margin: auto;
+      display: grid;
+      align-content: center;
     }
   } 
   

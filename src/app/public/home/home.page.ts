@@ -54,24 +54,24 @@ export class HomePage implements OnInit {
 
   menuChangeEvento() {
     if (this.menuChecked == false) {
-      document.getElementById('toggle').style.boxShadow = "0 0 0 1300px #9c27b0";
+      document.getElementById('toggle').style.boxShadow = "0 0 0 1400px var(--ion-color-primary)";
       document.getElementById('details').style.display = "flex";
       document.getElementById('details').style.transitionDelay = "0.5s";
       this.menuChecked = true;
     } else {
-      document.getElementById('toggle').style.boxShadow = "0 0 0 0px #9c27b0";
+      document.getElementById('toggle').style.boxShadow = "0 0 0 0px var(--ion-color-primary)";
       document.getElementById('details').style.display = "none";
       this.menuChecked = false;
     }
   }
 
   menuEvento(value) {
-    document.getElementById('toggle').style.boxShadow = "0 0 0 0px #9c27b0";
+    document.getElementById('toggle').style.boxShadow = "0 0 0 0px var(--ion-color-primary)";
     document.getElementById('details').style.display = "none";
     this.menuChecked = false;
     if (value == 'home') {
       console.log('home');
-      document.getElementById('ContentHome').style.display = "block";
+      document.getElementById('ContentHome').style.display = "block"; 
       document.getElementById('ContentLineas').style.display = "none";
       document.getElementById('ContentPreguntas').style.display = "none";
     } else if (value == 'lineas') {
